@@ -1,0 +1,17 @@
+{
+  "name": "contractcodealpha",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "solc": "^0.3.1-1"
+  },
+  "version": "1.0.0",
+  "description": "Application for creation of contract documents",
+  "main": "main.js",
+  "devDependencies": {},
+  "author": "Joe Dewey",
+  "license": "ISC"
+}
