@@ -1,0 +1,22 @@
+<template name="ethereum">
+{{setConnection}}
+<h3>Ethereum Dashboard</h3>
+<p>Web3 Version: {{Web3Version}}</p>
+<p>Current Provider: {{current}}</p>
+<p>Client Version: {{Web3ClientVersion}}</p>
+<p>Coinbase: {{defaultAccount}}</p>
+<p>Balance: {{balance}}</p>
+<p>Gas Price: {{gasprice}}</p>
+<p></p>
+<p><label class="item item-input">
+  	<input type="text" name='address' placeholder="Enter contract address">
+   </label></p>
+<div class='find'>
+<input type="submit" value="Submit" class="btn btn-primary"/>
+</div>
+<p><h3>Disclosure:</h3></p>
+
+<p>The above dashboard provides basic information about the ethereum node utilized by this application.</p><p>Please note that the ethereum node is currently connected to the PUBLIC ethereum blockchain and NOT a private test net.  This means that all transactions done here are distributed into the "wild".</p>
+<p>To load a smart document that you or anyone else created on our platform, simply input the contract address in the form above and submit.</p>
+
+</template>
