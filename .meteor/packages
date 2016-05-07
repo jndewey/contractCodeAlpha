@@ -41,3 +41,4 @@ modules
 kadira:blaze-layout
 kadira:flow-router
 arillo:flow-router-helpers
+accounts-google

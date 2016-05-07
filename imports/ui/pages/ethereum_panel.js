@@ -6,7 +6,7 @@ Template.ethereum.helpers({
     console.log(web3);
   },
   balance: function() {
-  var coin = '2d75086d2ffbf2052bdb96755afec216e48cb3af';
+  var coin = '0x5e561e6097210571d7f56913599a31950283d260';
   var balance = web3.eth.getBalance(coin);
   return balance;
   },
@@ -23,7 +23,7 @@ Template.ethereum.helpers({
     return version;
   },
   defaultAccount: function() {
-   var account = '2d75086d2ffbf2052bdb96755afec216e48cb3af';
+   var account = '0x5e561e6097210571d7f56913599a31950283d260';
     return account;
   },
   gasprice: function() {

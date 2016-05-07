@@ -37,10 +37,9 @@
            <!-- {#if isInRole 'admin'}}  -->
               <li role="presentation"><a href="{{pathFor 'documents_index'}}">Document Creator (Alpha)</a></li>
               <li role="presentation"><a href="{{pathFor 'ethereumPanel'}}">Ethereum Dashboard</a></li>
-              <li role="presentation"><a href="#">About</a></li>
-              <li role="presentation"><a href="#">Contact</a></li>
-            <!--{{/if}} -->
-             <!-- {{> loginButtons}} -->
+              <li role="presentation"><a href="{{pathFor 'about'}}">About</a></li>
+              <li role="presentation"><a href="{{pathFor 'contact'}}">Contact</a></li>
+              <li role="presentation">{{> loginButtons}}</li> 
 
           </ul>
         </nav>
