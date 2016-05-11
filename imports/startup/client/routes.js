@@ -2,8 +2,12 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 //import { AccountsTemplates } from 'meteor/useraccounts:core';
 
+import '../../ui/pages/publications.js';
+import '../../ui/pages/publications_latam.js';
 import '../../ui/pages/ethereum_panel.js';
+import '../../ui/pages/output.js';
 import '../../ui/pages/sampleNote.js';
+import '../../ui/pages/myDocuments.js';
 import '../../ui/pages/documents_index.js';
 import '../../ui/pages/about.html';
 import '../../ui/pages/contact.html';
@@ -20,10 +24,25 @@ FlowRouter.route('/', {
   }
 });
 
+FlowRouter.route('/output/:_id', {
+  name: 'output',
+  action(params) {
+  BlazeLayout.render('layout', {content: 'output'});
+  }
+});
+
+
 FlowRouter.route('/ethereum_panel', {
     name: 'ethereumPanel',
     action() {
     BlazeLayout.render('layout', {content: 'ethereum'});
+  }
+});
+
+FlowRouter.route('/myDocuments', {
+    name: 'myDocuments',
+    action() {
+    BlazeLayout.render('layout', {content: 'myDocuments'});
   }
 });
 
@@ -45,6 +64,20 @@ FlowRouter.route('/about', {
     name: 'about',
     action() {
     BlazeLayout.render('layout', {content: 'about'});
+  }
+});
+
+FlowRouter.route('/publications', {
+    name: 'publications',
+    action() {
+    BlazeLayout.render('layout', {content: 'publications'});
+  }
+});
+
+FlowRouter.route('/publications_latam', {
+    name: 'publications_latam',
+    action() {
+    BlazeLayout.render('layout', {content: 'publications_latam'});
   }
 });
 

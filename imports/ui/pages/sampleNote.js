@@ -12,9 +12,10 @@ Template.sampleNote.events({
       loan_amount: document.getElementsByName("loan_amount")[0].value,
       lender: document.getElementsByName("lender")[0].value,
       maturity_date: document.getElementsByName("maturity_date")[0].value,
+      owner: Meteor.userId()
   };
     documents._id = Documents.insert(documents);
-    alert("Document Saved");
-    FlowRouter.go('ethereumPanel');
+    alert("Document Saved" + " " + documents._id);
+    FlowRouter.go('output', { _id: documents._id });
   }
 });

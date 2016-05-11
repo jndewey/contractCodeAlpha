@@ -3,8 +3,10 @@
   <a href="#" class="list-group-item active">
     Forms and Templates (Alpha version and still under contruction)
   </a>
+  {{#if currentUser}}
   <a href="{{pathFor 'CAS_CRE_nonConstruction'}}" class="list-group-item">Form: Credit Approval Summary (CRE - Non-Construction Loan)</a>
   <a href="#" class="list-group-item">Form: Credit Approval Summary (CRE - Construction Loan) [IN PROGRESS]</a>
+  {{/if}}
   <a href="{{pathFor 'sampleNote'}}" class="list-group-item">Form: Promissory Note</a>
 </div>
 </template>

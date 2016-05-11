@@ -1,0 +1,1 @@
+import './publications_latam.html';

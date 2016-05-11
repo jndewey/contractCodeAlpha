@@ -1,0 +1,18 @@
+<template name="output">
+<center>PROMISSORY NOTE</center>
+<p></p>
+<p></p>
+{{#if Template.subscriptionsReady}}
+{{#with deal}}
+<p>{{note_date}}</p>
+<p></p>
+{{maker_name}} hereby promises to pay to {{lender}} or order the principal sum of {{loan_amount_written}} Dollars (${{loan_amount}}) on {{maturity_date}}.
+<p></p>
+<p></p>
+{{/with}}
+{{else}}
+<p>Loading...</p>
+{{/if}}
+  <p><div id='uploadCode' class='submit'><input class="btn btn-primary" size='50' value="Upload Code to Ethereum Blockchain"></div></p>
+
+</template>
