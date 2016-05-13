@@ -4,6 +4,12 @@ accounts-oauth@1.1.12
 accounts-password@1.1.8
 accounts-ui@1.1.9
 accounts-ui-unstyled@1.1.12
+akasha:adm-zip@0.4.8
+akasha:es6-symbol@0.0.1
+akasha:fs-extra@0.26.3
+akasha:meteor-ipfs@0.0.5
+akasha:request@2.67.1
+akasha:shelljs@0.5.4
 alanning:roles@1.2.15
 allow-deny@1.0.4
 arillo:flow-router-helpers@0.5.1
@@ -71,6 +77,8 @@ oauth@1.1.10
 oauth2@1.1.9
 observe-sequence@1.0.11
 ordered-dict@1.0.7
+practicalmeteor:chai@1.9.2_3
+practicalmeteor:loglevel@1.1.0_3
 promise@0.6.7
 random@1.0.9
 rate-limit@1.0.4
@@ -79,9 +87,11 @@ reactive-var@1.0.9
 reload@1.1.8
 retry@1.0.7
 routepolicy@1.0.10
+sanjo:long-running-child-process@1.1.5
 service-configuration@1.0.9
 session@1.1.5
 sha@1.0.7
+silentcicero:ethereumjs-accounts@0.0.15
 silentcicero:solc-compiler@0.2.1
 spacebars@1.0.11
 spacebars-compiler@1.0.11

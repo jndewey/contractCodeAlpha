@@ -2,7 +2,6 @@
 //import solc from './bin/soljson-latest.js';
 //import solc from 'solc';
 import { solc } from 'meteor/silentcicero:solc-compiler';
-import async from 'async';
 
 if (Meteor.isServer) {
 	 Meteor.methods({

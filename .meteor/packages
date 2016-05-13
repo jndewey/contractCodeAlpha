@@ -44,3 +44,5 @@ arillo:flow-router-helpers
 accounts-google
 zimme:active-route
 silentcicero:solc-compiler
+akasha:meteor-ipfs
+silentcicero:ethereumjs-accounts

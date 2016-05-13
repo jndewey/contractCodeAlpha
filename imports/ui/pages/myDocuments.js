@@ -1,5 +1,9 @@
 import './myDocuments.html';
 
-Template.myDocuments.events({
-
+Template.myDocuments.helpers({
+ list: function() {
+    var owner = Meteor.userId();
+    var documents = Documents.find({'owner': owner});
+    return documents;
+  }
 });
