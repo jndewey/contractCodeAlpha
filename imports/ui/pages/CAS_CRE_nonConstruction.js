@@ -4,13 +4,7 @@ Borrowers = new Mongo.Collection(null);
 Guarantors = new Mongo.Collection(null);
 
 Template.CAS_CRE_nonConstruction.helpers({
-  test: function() {
-  var Obj = { "name": "Joe",
-              "status": "Online",
-              "array": ['one', "two", "three"]};
-  return Obj.array;
-}
-
+//
 });
 
 Template.CAS_CRE_nonConstruction.events({
@@ -49,8 +43,9 @@ Template.CAS_CRE_nonConstruction.events({
     };
     pushName(borrowerNameArray);
     pushNameGuarantor(guarantorNameArray);
-    var contracts = {
+    var documents = {
       form_source: 'creCAS001',
+      type: document.getElementsByName("type")[0].value,
       division: document.getElementsByName("division")[0].value,
       cost_center: document.getElementsByName("cost_center")[0].value,
       refferal: document.getElementsByName("referral")[0].value,
@@ -85,12 +80,13 @@ Template.CAS_CRE_nonConstruction.events({
       cap_percent_written: document.getElementsByName("cap_percent_written")[0].value,
       cap_percentage: document.getElementsByName("cap_percentage")[0].value,
       extend: document.getElementsByName("extend")[0].value,
+      owner: Meteor.userId()
   };
 
-    contracts._id = Contracts.insert(contracts);
-    alert("Contract Saved");
+    documents._id = Documents.insert(documents);
+    alert("Document Saved");
     Borrowers.remove({});
     Guarantors.remove({});
-    Router.go('outputCRECAS', contracts);
+    FlowRouter.go('output', { _id: documents._id });
   }
 });

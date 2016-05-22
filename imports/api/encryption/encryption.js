@@ -6,40 +6,44 @@ Meteor.methods({
 
      'encrypt': function(message, publicKey) {
       var future = new Future();
-      var message = message;
-      var key = publicKey;
-      var publicKey = openpgp.key.readArmored(key);
-      openpgp.encryptMessage(publicKey.keys, "hello").then(function(pgpMessage) {
-        console.log(pgpMessage);
-        var message = pgpMessage;
-        future ["return"] (message)
-        });
+      var openpgp = require('openpgp');
+      openpgp.initWorker({ path:'openpgp.worker.js' });
+      openpgp.config.aead_protect = true;
+      var options, encrypted;
+      var pubkey = publicKey;
+      //var privkey = '-----BEGIN PGP PRIVATE KEY BLOCK ... END PGP PRIVATE KEY BLOCK-----';
+      options = {
+        data: message,                             // input as String (or Uint8Array) 
+        publicKeys: openpgp.key.readArmored(pubkey).keys,  // for encryption 
+        //privateKeys: openpgp.key.readArmored(privkey).keys // for signing (optional) 
+      };
+      openpgp.encrypt(options).then(function(ciphertext) {
+      encrypted = ciphertext.data; // '-----BEGIN PGP MESSAGE ... END PGP MESSAGE-----' 
+      });
+      console.log(ciphertext.data);
+      var response = encrypted;
+      future.return(response);
       return future.wait();
-    },
-
+},
     'createKeys' : function() {
       var future = new Future();
       var openpgp = require('openpgp');
       openpgp.initWorker({ path:'openpgp.worker.js' });
       openpgp.config.aead_protect = true;
-      var passphrase = 'passphrase';
       var options = {
         userIds: [{ name:'Jon Smith', email:'jon@example.com' }], // multiple user IDs
         numBits: 4096,                                            // RSA key size
         passphrase: 'super long and hard to guess secret'         // protects the private key
         };
-
       openpgp.generateKey(options).then(function(key) {
-      var privkey = key.privateKeyArmored; // '-----BEGIN PGP PRIVATE KEY BLOCK ... '
-      var pubkey = key.publicKeyArmored;   // '-----BEGIN PGP PUBLIC KEY BLOCK ... '
-   
-          console.log(privkey);
-          console.log(pubkey);
-          var keyPair = [privkey, pubkey];
-          var response = keyPair[0];
-          future.return(response);
-          return future.wait();
-         });
+        var privkey = key.privateKeyArmored; // '-----BEGIN PGP PRIVATE KEY BLOCK ... '
+        var pubkey = key.publicKeyArmored;   // '-----BEGIN PGP PUBLIC KEY BLOCK ... '
+        console.log(pubkey);
+        var keyPair = [privkey, pubkey];
+        var response = keyPair[0];
+        future.return(response);
+        return future.wait();
+        });
     },
 
      'decrypt': function(message, privateK) {

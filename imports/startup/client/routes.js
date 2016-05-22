@@ -12,8 +12,12 @@ import '../../ui/pages/documents_index.js';
 import '../../ui/pages/about.html';
 import '../../ui/pages/contact.html';
 import '../../ui/pages/CAS_CRE_nonConstruction.js';
+import '../../ui/pages/CAS_CRE_nonConstructionEdit.js';
 import '../../api/wallet/wallet.js';
+import '../../api/roles/roles.js';
 import '../../api/documents/documents.js';
+import '../../api/PDF/pdf.js';
+import '../../api/DOCX/docx.js';
 import '../../ui/layouts/body.js';
 import '../../ui/layouts/mainpage.html';
 
@@ -53,8 +57,8 @@ FlowRouter.route('/documents_index', {
   }
 });
 
-FlowRouter.route('/CAS_CRE_nonConstruction', {
-    name: 'CAS_CRE_nonConstruction',
+FlowRouter.route('/CAS_CRE', {
+    name: 'CAS_CRE',
     action() {
     BlazeLayout.render('layout', {content: 'CAS_CRE_nonConstruction'});
   }

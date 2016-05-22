@@ -1,6 +1,12 @@
 <template name="myDocuments">
-<h2>Your Documents</h2>
+<h3>Your Documents</h3>
+<p></p>
+<div class="list-group">
 {{#each list}}
-<h3>{{maker_name}}</h3>
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading">{{relationship_manager}}</h4>
+    <p class="list-group-item-text">Some other stuff about the deal</p>
+  </a>
 {{/each}}
+</div>
 </template>

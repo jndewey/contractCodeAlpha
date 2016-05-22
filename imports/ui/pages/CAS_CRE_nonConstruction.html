@@ -1,7 +1,20 @@
 <template name="CAS_CRE_nonConstruction">
+<img class="img-square" src='/logooceanbank.png' width="325" height="50">
   <h1 class="title">Credit Approval Summary (CAS)</h1>
-		<div class="list">
-      <h3>Credit Action/Request:</h3>
+    <h3>Credit Action Requested</h3>
+        <select name="type">
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><option value='new'>New</option></li>
+          <li><option value='renewal'>Renewal</option></li>
+          <li><option value='increase'>Increase</option></li>
+          <li><option value='decrease'>Decrease</option></li>
+          <li><option value='amendment'>Amendment</option></li>
+          <li role="separator" class="divider"></li>
+          <li><option value='cancel'>Cancel</option></li>
+        </ul>
+        </select>
+         <p></p>
+         <div>
   			<p><label class="item item-input">
     			<input type="text" name='CAS_date' placeholder="Date">
   			</label></p>

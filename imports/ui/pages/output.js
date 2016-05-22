@@ -40,33 +40,74 @@ Template.output.events({
       }
     }
   });
-    ipfsHash ='Qmcn7AryW6juQSmwWn1mzhfnBPQAsg3SmnrKRr8BQHXihV';
-    Meteor.call('ipfsCat', ipfsHash, function(err,resp) { 
+},
+
+'click #createAccount': function(e) {
+    e.preventDefault();
+    var accounts = new Accounts({minPassphraseLength: 6});
+    var accountObject = accounts.new('myPassphrase');
+    console.log(accountObject);
+    var doc = new jsPDF();
+    doc.text(20, 20, 'Hello world.');
+    doc.save('Test.pdf');
+    Meteor.call('ipfsAdd', "Needs to be html", function(err,resp){
     if ( err ) {
     console.log( err );
     } else {
     console.log( resp );
         }
     });
+},
 
-   Meteor.call('createKeys', function(error, response) {
+'click #encrypt': function(e) {
+    e.preventDefault();
+    console.log('You made it this far');
+    Meteor.call('createKeys', function( error, response ) {
     if ( error ) {
     console.log( error );
     } else {
-    console.log(response);
+    console.log( response );
+    Session.set('globalPublicKey', response);
+        }
+    var test = Session.get('globalPublicKey');
+    console.log(test);
+    });
+    /* var message = "This is a contractCode";
+    var publicKey = Session.get('globalPublicKey');
+    //3console.log(publicKey);
+    Meteor.call('encrypt', message, publicKey, function (error, response) {
+    if ( error ) {
+    console.log( error );
+    } else {
+    console.log( response );
       }
-    }); 
+  }); */
 },
 
-'click #createAccount': function(e) {
+'click #get': function(e) {
     e.preventDefault();
-    //var Accounts = require('ethereumjs-accounts');
-    var accounts = new Accounts({minPassphraseLength: 6}); // or new Accounts(..) if using dist.
+    var HtmlDocx = require('html-docx-js');
+    var fs = require('fs');
+    var inputFile = '~/test.html';
+    var outputFile = 'text.docx';
+    console.log(Object.getOwnPropertyNames(HtmlDocx));
+    fs.readFile(inputFile, 'utf-8', function(err, html) {
+    if (err) throw err;
 
-    // Generate a new account encrypted with a passphrase
-    var accountObject = accounts.new('myPassphrase');
+    var docx = HtmlDocx.asBlob(html);
+    fs.writeFile(outputFile, docx, function(err) {
+    if (err) throw err;
+    });
+});
 
-    console.log(accountObject);
+    /* var hash = 'QmQ1xrPzKaFharLbkqoFnhrXN1cLpdQj6RstVrVS9zhAEu';
+    Meteor.call('ipfsCat', hash, function(err,resp){
+    if ( err ) {
+    console.log( err );
+    } else {
+    console.log( resp );
+        }
+    }); */
 }
 
 });

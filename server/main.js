@@ -5,6 +5,8 @@ import '../imports/api/compiler/compiler.js';
 import '../imports/api/encryption/encryption.js';
 import '../imports/api/wallet/wallet.js';
 import '../imports/api/IPFS/ipfs.js';
+import '../imports/api/PDF/pdf.js';
+//import '../../api/DOCX/docx.js';
 
 Meteor.startup(() => {
   process.env.MONGO_URL = 'mongodb://root:xAw5orybyg@olympia.modulusmongo.net:27017/ymEhe9ju?autoReconnect=true&connectTimeoutMS=60000';
@@ -21,6 +23,6 @@ Meteor.startup(() => {
     });
   }
 };
-   testIpfs();
+   testIpfs(); 
 
 });
