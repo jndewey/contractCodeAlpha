@@ -3,9 +3,11 @@
 <p></p>
 <div class="list-group">
 {{#each list}}
-  <a href="#" class="list-group-item active">
-    <h4 class="list-group-item-heading">{{relationship_manager}}</h4>
-    <p class="list-group-item-text">Some other stuff about the deal</p>
+  <a class="list-group-item active">
+    <h4 class="list-group-item-heading">{{project_name}}</h4>
+    <p class="list-group-item-text">{{nature}}</p>
+    <a href="{{pathFor 'dealPage'}}" class="discuss btn btn-default">Open Document</a>
+    <a href="{{pathFor 'edit'}}" class="discuss btn btn-default">Edit Document</a>
   </a>
 {{/each}}
 </div>

@@ -46,6 +46,8 @@ Template.CAS_CRE_nonConstruction.events({
     var documents = {
       form_source: 'creCAS001',
       type: document.getElementsByName("type")[0].value,
+      project_name: document.getElementsByName("project_name")[0].value,
+      nature: document.getElementsByName("nature")[0].value,
       division: document.getElementsByName("division")[0].value,
       cost_center: document.getElementsByName("cost_center")[0].value,
       refferal: document.getElementsByName("referral")[0].value,

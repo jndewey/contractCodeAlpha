@@ -6,11 +6,11 @@ import '../imports/api/encryption/encryption.js';
 import '../imports/api/wallet/wallet.js';
 import '../imports/api/IPFS/ipfs.js';
 import '../imports/api/PDF/pdf.js';
-//import '../../api/DOCX/docx.js';
+import '../imports/api/DOCX/docx.js';
 
 Meteor.startup(() => {
   process.env.MONGO_URL = 'mongodb://root:xAw5orybyg@olympia.modulusmongo.net:27017/ymEhe9ju?autoReconnect=true&connectTimeoutMS=60000';
-  ipfsObj =  IpfsConnector.getInstance(); //singleton
+  /* ipfsObj =  IpfsConnector.getInstance(); //singleton
   ipfsObj.setLogLevel('info'); // info is default
   const testIpfs = function () {
   // start ipfs daemon
@@ -23,6 +23,5 @@ Meteor.startup(() => {
     });
   }
 };
-   testIpfs(); 
-
+   testIpfs(); */
 });

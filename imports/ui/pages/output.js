@@ -42,72 +42,13 @@ Template.output.events({
   });
 },
 
-'click #createAccount': function(e) {
+'click #createPDF': function(e) {
     e.preventDefault();
-    var accounts = new Accounts({minPassphraseLength: 6});
-    var accountObject = accounts.new('myPassphrase');
-    console.log(accountObject);
     var doc = new jsPDF();
-    doc.text(20, 20, 'Hello world.');
+    var raw = document.getElementById("doc_body");
+    body = raw.textContent;
+    doc.text(20, 20, body);
     doc.save('Test.pdf');
-    Meteor.call('ipfsAdd', "Needs to be html", function(err,resp){
-    if ( err ) {
-    console.log( err );
-    } else {
-    console.log( resp );
-        }
-    });
-},
-
-'click #encrypt': function(e) {
-    e.preventDefault();
-    console.log('You made it this far');
-    Meteor.call('createKeys', function( error, response ) {
-    if ( error ) {
-    console.log( error );
-    } else {
-    console.log( response );
-    Session.set('globalPublicKey', response);
-        }
-    var test = Session.get('globalPublicKey');
-    console.log(test);
-    });
-    /* var message = "This is a contractCode";
-    var publicKey = Session.get('globalPublicKey');
-    //3console.log(publicKey);
-    Meteor.call('encrypt', message, publicKey, function (error, response) {
-    if ( error ) {
-    console.log( error );
-    } else {
-    console.log( response );
-      }
-  }); */
-},
-
-'click #get': function(e) {
-    e.preventDefault();
-    var HtmlDocx = require('html-docx-js');
-    var fs = require('fs');
-    var inputFile = '~/test.html';
-    var outputFile = 'text.docx';
-    console.log(Object.getOwnPropertyNames(HtmlDocx));
-    fs.readFile(inputFile, 'utf-8', function(err, html) {
-    if (err) throw err;
-
-    var docx = HtmlDocx.asBlob(html);
-    fs.writeFile(outputFile, docx, function(err) {
-    if (err) throw err;
-    });
-});
-
-    /* var hash = 'QmQ1xrPzKaFharLbkqoFnhrXN1cLpdQj6RstVrVS9zhAEu';
-    Meteor.call('ipfsCat', hash, function(err,resp){
-    if ( err ) {
-    console.log( err );
-    } else {
-    console.log( resp );
-        }
-    }); */
 }
 
 });

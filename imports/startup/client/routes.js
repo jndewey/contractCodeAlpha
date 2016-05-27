@@ -3,9 +3,10 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 //import { AccountsTemplates } from 'meteor/useraccounts:core';
 
 import '../../ui/pages/publications.js';
-import '../../ui/pages/publications_latam.js';
+import '../../ui/pages/marketplace.js';
 import '../../ui/pages/ethereum_panel.js';
 import '../../ui/pages/output.js';
+import '../../ui/pages/edit.js';
 import '../../ui/pages/sampleNote.js';
 import '../../ui/pages/myDocuments.js';
 import '../../ui/pages/documents_index.js';
@@ -32,6 +33,13 @@ FlowRouter.route('/output/:_id', {
   name: 'output',
   action(params) {
   BlazeLayout.render('layout', {content: 'output'});
+  }
+});
+
+FlowRouter.route('/edit', {
+  name: 'edit',
+  action(params) {
+  BlazeLayout.render('layout', {content: 'edit'});
   }
 });
 
@@ -78,10 +86,10 @@ FlowRouter.route('/publications', {
   }
 });
 
-FlowRouter.route('/publications_latam', {
-    name: 'publications_latam',
+FlowRouter.route('/marketplace', {
+    name: 'marketplace',
     action() {
-    BlazeLayout.render('layout', {content: 'publications_latam'});
+    BlazeLayout.render('layout', {content: 'marketplace'});
   }
 });
 
