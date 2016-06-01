@@ -2,6 +2,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 //import { AccountsTemplates } from 'meteor/useraccounts:core';
 
+import '../../api/HTTP/http.js';
 import '../../ui/pages/publications.js';
 import '../../ui/pages/marketplace.js';
 import '../../ui/pages/ethereum_panel.js';
@@ -36,10 +37,10 @@ FlowRouter.route('/output/:_id', {
   }
 });
 
-FlowRouter.route('/edit', {
+FlowRouter.route('/edit/:_id', {
   name: 'edit',
   action(params) {
-  BlazeLayout.render('layout', {content: 'edit'});
+  BlazeLayout.render('layout', {content: 'edit', params: params});
   }
 });
 

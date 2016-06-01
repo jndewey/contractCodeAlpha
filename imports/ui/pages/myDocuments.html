@@ -3,12 +3,15 @@
 <p></p>
 <div class="list-group">
 {{#each list}}
+<div>
   <a class="list-group-item active">
     <h4 class="list-group-item-heading">{{project_name}}</h4>
     <p class="list-group-item-text">{{nature}}</p>
-    <a href="{{pathFor 'dealPage'}}" class="discuss btn btn-default">Open Document</a>
-    <a href="{{pathFor 'edit'}}" class="discuss btn btn-default">Edit Document</a>
+    <a href="{{pathFor '#'}}" class="discuss btn btn-default">Open Document</a>
+    <a href="{{pathForDocument}}" class="discuss btn btn-default">Edit Document</a>
+    <p><div class='delete_document'><a href="#" class="discuss btn btn-danger">Delete Document</a></div></p>
   </a>
+</div>
 {{/each}}
 </div>
 </template>

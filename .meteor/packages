@@ -47,3 +47,4 @@ silentcicero:solc-compiler
 akasha:meteor-ipfs
 silentcicero:ethereumjs-accounts
 jspdf:core
+http

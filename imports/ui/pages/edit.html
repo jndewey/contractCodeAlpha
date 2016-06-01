@@ -1,3 +1,33 @@
 <template name='edit'>
-	Dynamic template loading is still under construction
+	  <h1 class="title">Promissory Note</h1>
+		<div class="list">
+  		<p><label class="item item-input">
+    		<input type="text" name='note_date' value="{{deal.note_date}}" placeholder="Effective Date">
+  		</label></p>
+  		<p><label class="item item-input">
+    		<input type="text" name='maker_name' value="{{deal.maker_name}}" placeholder="Maker">
+  		</label></p>
+        <p><label class="item item-input">
+          <input type="text" size='35' name='loan_amount_written' value="{{deal.loan_amount_written}}" placeholder="Loan Amount (Written)(e.g., Five Million)">
+        </label></p>
+        <p><label class="item item-input">
+          <input type="text" size='35' name='loan_amount' value="{{deal.loan_amount}}" placeholder="Loan Amount (Numeral)(e.g., 5,000,000)">
+        </label></p>
+        <p><label class="item item-input">
+          <input type="text" name='maturity_date' value="{{deal.maturity_date}}" placeholder="Maturity Date">
+        </label></p>
+        <p><label class="item item-input">
+          <input type="text" name='lender' value="{{deal.lender}}" placeholder="Lender's Name">
+        </label></p>
+		<p>Before we finish, let's add some meta-data to help keep track of your documents:</p>
+        <p><label class="item item-input">
+          <input type="text" name='project_name' value="{{deal.project_name}}" placeholder="Project Name">
+        </label></p>
+        <p><label class="item item-input">
+          <input type="text" name='nature' value="{{deal.project_name}}" placeholder="Nature of Transaction">
+        </label></p>
+  </div>
+	<div class='doc'>
+		<input type="submit" value="Submit" class="btn btn-primary"/>
+	</div>
 </template>
