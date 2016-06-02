@@ -81,17 +81,17 @@ Template.output.events({
       }
     }
   });
-    /*web3.eth.sendTransaction({from: mySenderAddress, to: recipient, value: 1000}, function(error, result){
+    web3.eth.sendTransaction({from: mySenderAddress, to: recipient, value: 1000}, function(error, result){
       if(!error) {
 
       if(!result) {
         console.log("transaction waiting to be mined...");
 
       } else {
-        console.log("Transaction sent " + result);
+        console.log("Transaction sent " + result + error);
       }
     }
-  }); */
+  }); 
     console.log('done');
 },
 
