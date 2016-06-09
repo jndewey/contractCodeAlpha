@@ -1,0 +1,1 @@
+{"version":3,"sources":["meteor://💻app/packages/akasha:request/request.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA,UAAU,IAAI,OAAJ,CAAY,SAAZ,CAAV,yC","file":"/packages/akasha_request.js","sourcesContent":["Request = Npm.require('request');"]}
