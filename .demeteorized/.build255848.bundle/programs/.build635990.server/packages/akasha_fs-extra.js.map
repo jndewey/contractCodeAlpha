@@ -1,1 +1,0 @@
-{"version":3,"sources":["meteor://💻app/packages/akasha:fs-extra/fs-extra.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA,MAAW,IAAI,OAAJ,CAAY,UAAZ,CAAX,4C","file":"/packages/akasha_fs-extra.js","sourcesContent":["Fse      = Npm.require('fs-extra');"]}

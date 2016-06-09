@@ -81,7 +81,7 @@ Template.output.events({
       }
     }
   });
-    web3.eth.sendTransaction({from: mySenderAddress, to: recipient, value: 1000}, function(error, result){
+    web3.eth.sendTransaction({from: mySenderAddress, to: recipient, value: 238712}, function(error, result){
       if(!error) {
 
       if(!result) {

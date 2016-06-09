@@ -6,6 +6,7 @@ Template.sampleNote.events({
     e.preventDefault();
     var documents = {
       document_template: "sampleNote",
+      template_form_id: "SMPNOTE0001",
       note_date: document.getElementsByName("note_date")[0].value,
       project_name: document.getElementsByName("project_name")[0].value,
       nature: document.getElementsByName("nature")[0].value,

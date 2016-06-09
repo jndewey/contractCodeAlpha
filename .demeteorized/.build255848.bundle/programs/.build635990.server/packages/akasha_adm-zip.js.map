@@ -1,1 +1,0 @@
-{"version":3,"sources":["meteor://💻app/packages/akasha:adm-zip/adm-zip.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA,SAAS,IAAI,OAAJ,CAAY,SAAZ,CAAT,0C","file":"/packages/akasha_adm-zip.js","sourcesContent":["AdmZip = Npm.require('adm-zip');\n"]}

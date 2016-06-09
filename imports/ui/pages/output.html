@@ -3,12 +3,13 @@
 <p></p>
 {{#if Template.subscriptionsReady}}
 {{#with deal}}
+<h2>Paper Contract:</h2>
 <div name='doc_body' id='doc_body'>
-<center>PROMISSORY NOTE</center>
+<p>PROMISSORY NOTE</p>
 <p></p>
 <p>{{note_date}}</p>
 <p></p>
-<p>{{maker_name}} hereby promises to pay to {{lender}}</p>
+<p>{{maker_name}} hereby promises to pay to {{lender}}</p> 
 <p> or order the principal sum of {{loan_amount_written}} </p>
 <p>Dollars (${{loan_amount}}) on {{maturity_date}}.</p>
 <p></p>
@@ -18,7 +19,24 @@
 {{else}}
 <p>Loading...</p>
 {{/if}}
-  <p><div id='uploadCode' class='submit'><input class="btn btn-primary" size='50' value="Upload Document to Ethereum Blockchain"></div></p>
+<p></p>
+<h2>Code Monitor:</h2>
+<div class="well well-lg">
+{{#with deal}}
+var documentObject= {
+template_form_id: {{template_form_id}},
+note_date: {{note_date}},
+maker_name: {{maker_name}},
+loan_amount_written: {{loan_amount_written}},
+loan_amount: {{loan_amount}},
+lender: {{lender}},
+maturity_date: {{maturity_date}}
+};
+{{/with}}
+</div>
+
+<h2>Options:</h2>
+<p><div id='uploadCode' class='submit'><input class="btn btn-primary" size='50' value="Upload Document to Ethereum Blockchain"></div></p>
 
   <p><div id='createPDF' class='submit'><input class="btn btn-primary" size='50' value="Generate PDF"></div></p>
 

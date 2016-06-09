@@ -30,4 +30,18 @@
 	<div class='doc'>
 		<input type="submit" value="Submit" class="btn btn-primary"/>
 	</div>
+  <h2>Code Monitor:</h2>
+<div class="well well-lg">
+{{#with deal}}
+var documentObject= {
+template_form_id: {{template_form_id}},
+note_date: {{note_date}},
+maker_name: {{maker_name}},
+loan_amount_written: {{loan_amount_written}},
+loan_amount: {{loan_amount}},
+lender: {{lender}},
+maturity_date: {{maturity_date}}
+};
+{{/with}}
+</div>
 </template>

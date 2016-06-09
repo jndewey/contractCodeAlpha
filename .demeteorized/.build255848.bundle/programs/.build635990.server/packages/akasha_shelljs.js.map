@@ -1,1 +1,0 @@
-{"version":3,"sources":["meteor://💻app/packages/akasha:shelljs/shelljs.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA,UAAU,IAAI,OAAJ,CAAY,SAAZ,CAAV,yC","file":"/packages/akasha_shelljs.js","sourcesContent":["Shelljs = Npm.require('shelljs');"]}
